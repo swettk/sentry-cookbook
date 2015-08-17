@@ -81,7 +81,7 @@ EXTRA_ALLOWED_HOSTS = ['*']
 
 SENTRY_REDIS_OPTIONS = {
   "hosts": {
-  <% for host, hostsettings in @redis[:hosts] %>
+  <% for host, hostsettings in @redis['hosts'] %>
   <%= host %>: {
        <% for key, value in hostsettings %>
        "<%= key %>": <% if value.is_a?(Integer) %><%= value %><% else %>"<%= value %>"<% end %>,
